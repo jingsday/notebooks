@@ -27,6 +27,7 @@ adata = sc.read_mtx(mtx)
 cells=pd.read_csv('barcodes.tsv.gz',header=None)
 features=pd.read_csv('features.tsv.gz',header=None,sep='\t')
 adata= adata.T
+
 adata.obs['CellID']= cells
 adata.var['Gene']= features[1].tolist()
 adata.var.index= adata.var['Gene']
